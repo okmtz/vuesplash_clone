@@ -16,9 +16,7 @@ mix.js('resources/js/app.js', 'public/js')
         //
     ]);
 
-mix.browserSync('vuesplash.test').js('resources/js/app.js', 'public/js').version()
-
 mix.browserSync({
-    proxy: '0.0.0.0:8081',
+    proxy: '0.0.0.0:8080',
     open: false
 })
