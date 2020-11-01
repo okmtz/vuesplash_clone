@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - ./web:/var/www/html/vuesplash_clone
+    command: php artisan serve --host 0.0.0.0 --port 8080
+    ports:
+      - 8080:8080
+      - 3000:3000
+  db:
+    image: postgres:11-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
